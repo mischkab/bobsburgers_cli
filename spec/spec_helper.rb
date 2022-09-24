@@ -1,5 +1,5 @@
 require "open-uri"
-require "json"
 require "net/http"
+require "json"
 
-require_relative "../lib/character"
+require_relative "../lib/bobsburgers/character.rb"
