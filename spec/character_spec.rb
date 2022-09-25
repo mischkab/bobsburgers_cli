@@ -12,7 +12,6 @@ RSpec.describe Character, "#initialize" do
         first_episode: "\"The Grand Mama-pest Hotel\"",
         voiced_by: "Jenny Slate",
         wiki_url: "https://bobs-burgers.fandom.com/wiki/Bernadette_Baker",
-        relatives: []
     }
 
       #act

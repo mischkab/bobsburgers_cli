@@ -26,7 +26,6 @@ class Character
         first_episode: character["firstEpisode"],
         voiced_by: character["voicedBy"],
         wiki_url: character["wikiUrl"],
-        relatives: character["relatives"],
       }
       
       Character.new(attributes)
@@ -48,7 +47,6 @@ class Character
         first_episode: response_json["firstEpisode"],
         voiced_by: response_json["voicedBy"],
         wiki_url: response_json["wikiUrl"],
-        relatives: response_json["relatives"],
       }
       
     character = Character.new(attributes)
