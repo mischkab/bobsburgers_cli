@@ -9,7 +9,7 @@ class Character
     end
   end
 
-  def self.list_all_characters
+  def self.get_all_characters
     url = CHARACTERS_API_URL
     uri = URI.parse(url)
 

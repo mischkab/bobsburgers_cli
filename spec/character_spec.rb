@@ -22,12 +22,12 @@ RSpec.describe Character, "#initialize" do
     end
   end  
 
-RSpec.describe Character, "list_all_characters" do
+RSpec.describe Character, "#get_all_characters" do
   it "fetches the list of all Bob's Burgers characters" do
     #arrange not required
 
     #act
-    characters = Character.list_all_characters
+    characters = Character.get_all_characters
 
     #assert
     expect(characters.length).to be > 0
