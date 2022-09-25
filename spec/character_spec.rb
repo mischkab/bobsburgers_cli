@@ -48,3 +48,4 @@ RSpec.describe Character, "#get_character_details" do
     expect(character.name).to eq "Bernadette Baker"
   end
 end
+
