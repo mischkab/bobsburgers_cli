@@ -4,6 +4,7 @@ RSpec.describe Character, "#initialize" do
     it "initializes a new object of the Character class with the given attributes" do
       #arrange
       attributes =  {
+        id: "40",
         name: "Bernadette Baker",
         gender: "Female",
         hair_color: "Brown",

@@ -18,6 +18,7 @@ class Character
 
     characters = response_json.collect do |character|
       attributes =  {
+        id: character["id"],
         name: character["name"],
         gender: character["gender"],
         hair_color: character["hairColor"],
@@ -39,6 +40,7 @@ class Character
     response = Net::HTTP.get_response(uri)
     response_json = JSON.parse(response.body)
     attributes =  {
+        id: response_json["id"],
         name: response_json["name"],
         gender: response_json["gender"],
         hair_color: response_json["hairColor"],
