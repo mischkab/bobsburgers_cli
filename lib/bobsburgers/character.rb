@@ -53,4 +53,11 @@ class Character
       
     character = Character.new(attributes)
   end
+
+  def self.list_all_characters
+    Character.get_all_characters.each do |character|
+        puts "Character name = #{character.name}"
+        puts "Character id = #{character.id}"
+    end
+  end
 end
