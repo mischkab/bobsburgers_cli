@@ -10,27 +10,45 @@ class Character
   end
 
   def self.list_all_characters
-    uri = URI.parse(CHARACTERS_API_URL)
+    url = CHARACTERS_API_URL
+    uri = URI.parse(url)
 
     response = Net::HTTP.get_response(uri)
-    characters = JSON.parse(response.body)
-    
-    characters.collect do |character|
-      attributes = {
-        id: character["id"],
+    response_json = JSON.parse(response.body)
+
+    characters = response_json.collect do |character|
+      attributes =  {
         name: character["name"],
-        image: character["image"],
         gender: character["gender"],
         hair_color: character["hairColor"],
         occupation: character["occupation"],
         first_episode: character["firstEpisode"],
         voiced_by: character["voicedBy"],
-        url: character["url"],
         wiki_url: character["wikiUrl"],
-        relatives: character["relatives"]
+        relatives: character["relatives"],
       }
-
+      
       Character.new(attributes)
     end
+  end
+
+  def self.get_character_details(id)
+    url = CHARACTERS_API_URL + id.to_s
+    uri = URI.parse(url)
+
+    response = Net::HTTP.get_response(uri)
+    response_json = JSON.parse(response.body)
+    attributes =  {
+        name: response_json["name"],
+        gender: response_json["gender"],
+        hair_color: response_json["hairColor"],
+        occupation: response_json["occupation"],
+        first_episode: response_json["firstEpisode"],
+        voiced_by: response_json["voicedBy"],
+        wiki_url: response_json["wikiUrl"],
+        relatives: response_json["relatives"],
+      }
+      
+    character = Character.new(attributes)
   end
 end

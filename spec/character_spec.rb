@@ -4,15 +4,12 @@ RSpec.describe Character, "#initialize" do
     it "initializes a new object of the Character class with the given attributes" do
       #arrange
       attributes =  {
-        id: 40,
         name: "Bernadette Baker",
-        image: "https://bobsburgers-api.herokuapp.com/images/characters/40.jpg",
         gender: "Female",
         hair_color: "Brown",
         occupation: "Astronaut (former)",
         first_episode: "\"The Grand Mama-pest Hotel\"",
         voiced_by: "Jenny Slate",
-        url: "https://bobsburgers-api.herokuapp.com/characters/40",
         wiki_url: "https://bobs-burgers.fandom.com/wiki/Bernadette_Baker",
         relatives: []
     }
@@ -37,5 +34,17 @@ RSpec.describe Character, "list_all_characters" do
     characters.each do |character|
       expect(character).to be_a_kind_of Character
     end
+  end
+end
+
+RSpec.describe Character, "#get_character_details" do
+  it "fetches the details of a character given an id" do
+    #arrange not required
+
+    #act
+    character = Character.get_character_details(40)
+
+    #assert
+    expect(character.name).to eq "Bernadette Baker"
   end
 end
