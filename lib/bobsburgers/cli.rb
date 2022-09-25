@@ -12,7 +12,7 @@ class CLI
       while input != "q" 
         input = gets.strip
         if input.to_i > 0 && input.to_i < 507
-          display_char_details(input)
+          Character.list_character_details(input)
           options
         elsif input == "b"
           display_characters
@@ -29,19 +29,12 @@ class CLI
     puts "\nPlease enter the number for the character you'd like details on or enter 'q' to quit: "
   end
 
-  def display_char_details(input_id)
-    character_details = Character.get_character_details(input_id)
-    puts "Character name = #{character_details.name}"
-    puts "Character gender = #{character_details.gender}"
-  end
-
-
   def options
-    puts "Enter a new character number, type 'b' to return to the list of characters or 'q' to quit:"
+    puts "\nEnter a new character number, type 'b' to return to the list of characters or 'q' to quit:"
   end
 
   def goodbye
-    puts "Thank you for using the Bob's Burgers Character Wiki. We hope to see you again soon!.\n "
+    puts "\nThank you for using the Bob's Burgers Character Wiki. We hope to see you again soon!"
   end
 
 end

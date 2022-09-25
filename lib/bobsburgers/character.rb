@@ -57,4 +57,15 @@ class Character
         puts "#{character.id}. #{character.name}"
     end
   end
+
+  def self.list_character_details(id)
+    character_details = Character.get_character_details(id)
+    puts "#{character_details.name}:\n"
+    puts "  Gender: #{character_details.gender}\n"
+    puts "  Hair Colour: #{character_details.hair_color}\n"
+    puts "  Occupation: #{character_details.occupation}\n"
+    puts "  First Episode: #{character_details.first_episode}\n"
+    puts "  Voiced By: #{character_details.voiced_by}\n"
+    puts "  Link to #{character_details.name}'s wiki: #{character_details.wiki_url}"
+  end
 end
