@@ -54,8 +54,7 @@ class Character
 
   def self.list_all_characters
     Character.get_all_characters.each do |character|
-        puts "Character name = #{character.name}"
-        puts "Character id = #{character.id}"
+        puts "#{character.id}. #{character.name}"
     end
   end
 end

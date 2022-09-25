@@ -1,6 +1,6 @@
 class CLI
   def call
-    puts "Welcome to the Bob's Burgers Character Wiki"
+    puts "\nWelcome to the Bob's Burgers Character Wiki"
     puts "=========================================="
     puts "\nHere is the complete list of all characters in the Bob's Burgers Tv Show!\n"
     start
@@ -19,14 +19,14 @@ class CLI
         elsif input == "q"
           goodbye
         else
-        puts "Invalid entry, please enter your choice again, or enter 'q' to quit."
+        puts "Invalid entry, please enter your choice again, enter 'b' to see the character list or enter 'q' to quit."
         end
       end
     end
 
   def display_characters
     Character.list_all_characters
-    puts "\nPlease enter the character id to for more details on that character or 'q' to quit: "
+    puts "\nPlease enter the number for the character you'd like details on or enter 'q' to quit: "
   end
 
   def display_char_details(input_id)
@@ -37,7 +37,7 @@ class CLI
 
 
   def options
-    puts "Enter a new character id number, type 'b' to return to the list of characters or 'q' to quit:"
+    puts "Enter a new character number, type 'b' to return to the list of characters or 'q' to quit:"
   end
 
   def goodbye
